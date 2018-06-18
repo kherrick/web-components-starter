@@ -9,7 +9,8 @@ const WebComponentsStarterInput = class extends HTMLElement {
     container.innerHTML = template({ type: this.type })
 
     const shadowRoot = this.attachShadow({ mode: 'open' }).appendChild(container)
-    const inputNode = shadowRoot.querySelector(`#${this.type}`)
+    const querySelector = 'div[data-web-components-starter-input] > input'
+    const inputNode = shadowRoot.querySelector(querySelector)
 
     inputNode.addEventListener(
       'change',

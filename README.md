@@ -30,13 +30,13 @@ mkdir -p hello-web-components \
 ### Copy the starter index.html to the root of the project
 
  ```bash
- cp node_modules/web-components-starter/dist/build-ie11/index.html ./
+ cp node_modules/web-components-starter/dist/build-ie11-iife/index.html ./
  ```
 
- ### Update the path to the module
+### Update the path to the module
  ```bash
-export C=container I=index N=nomodule WCS=web-components-starter \
-  && sed "s#./$N/$WCS-$C.js#./node_modules/$WCS/dist/build-ie11/$N/$WCS-$C.js#g" ./$I.html > $I.html.new \
+export C=container I=index N=iife WCS=web-components-starter \
+  && sed "s#./$N/main.js#./node_modules/$WCS/dist/build-ie11-$N/$N/main.js#g" ./$I.html > $I.html.new \
   && mv index.html.new index.html
 ```
 
